@@ -1,0 +1,10 @@
+outputs/
+data/
+*.sh
+*.zip 
+__pycache__/
+TELIKA_DATA/
+results/
+pretrained/
+trained_model/
+vdrpmdpc.py
