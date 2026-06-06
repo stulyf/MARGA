@@ -22,7 +22,7 @@ pip install -r requirements.txt
 
 ## 2. Dataset
 
-### Generated Data
+### Generate Data for Validation and Test
 
 Create validation and test datasets for the desired graph sizes, reward distributions, and tour length limits:
 
@@ -30,22 +30,6 @@ Create validation and test datasets for the desired graph sizes, reward distribu
 python generate_data.py --name test --seed 1234 --graph_sizes 20 20 20 35 35 35 50 50 50 75 75 75 100 100 100 --max_length 1.5 2 2.5 1.5 2 2.5 1.5 2 2.5 1.5 2 2.5 1.5 2 2.5
 
 python generate_data.py --name val --seed 4321 --graph_sizes 20 20 20 35 35 35 50 50 50 75 75 75 100 100 100 --max_length 1.5 2 2.5 1.5 2 2.5 1.5 2 2.5 1.5 2 2.5 1.5 2 2.5
-```
-
-### Real-World Data
-
-Download the data of [VDRPMDPC](https://data.mendeley.com/datasets/m5vmmkvx22/5)
-
-To convert the data form :
-
-```bash
-python MARGA/convert_vdrpmdpc.py \
-  --src_dir MARGA/TELIKA_DATA \
-  --out_root data \
-  --output_name telika_aug999 \
-  --num_augments 999 \
-  --noise_level 0.1 \
-  --max_length 2.0
 ```
 
 
