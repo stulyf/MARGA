@@ -48,15 +48,6 @@ Checkpoints and logs are saved to `outputs/<problem>_<distribution><size>/<run_n
 
 ## 4. Evaluate with Pretrained Weights
 
-Pretrained checkpoints are distributed through [GitHub Releases](https://github.com/stulyf/MARGA/releases) instead of being stored directly in the repository.
-
-Download `pretrained.zip` from the latest release, place it in the project root, and extract it to recover the `pretrained/` directory:
-
-```bash
-unzip pretrained.zip
-```
-
-After extraction, evaluate a checkpoint on a dataset using `eval.py`:
 
 Mixed-training Model :
 
