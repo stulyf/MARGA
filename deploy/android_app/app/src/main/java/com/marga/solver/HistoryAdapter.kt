@@ -24,8 +24,8 @@ class HistoryAdapter : ListAdapter<SolverHistory, HistoryAdapter.ViewHolder>(DIF
         val b = holder.binding
 
         b.tvRewardBadge.text = item.result.totalPrize.toInt().toString()
-        b.tvDatasetType.text = item.datasetType
-        b.tvNodeCount.text = "${item.nodeCount} nodes · ${item.result.routes.size} agents · ${item.datasetType}"
+        b.tvDatasetType.text = "Synthetic"
+        b.tvNodeCount.text = "${item.nodeCount} nodes · ${item.result.routes.size} agents"
         b.chipLatency.text = "${item.result.inferenceTimeMs} ms"
 
         val elapsed = System.currentTimeMillis() - item.timestamp

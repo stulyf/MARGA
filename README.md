@@ -48,6 +48,21 @@ Checkpoints and logs are saved to `outputs/<problem>_<distribution><size>/<run_n
 
 ## 4. Evaluate with Pretrained Weights
 
+Pre-trained models are available at [Google Drive](https://drive.google.com/file/d/1Sd7BeJ9TO0ClmuvJzPNrjoyz2cvJI3du/view).
+Download and extract `MARGA_pretrained.zip` to the `pretrained/` directory:
+
+```
+pretrained/
+├── Mixed-training/
+│   ├── top_mixed20/MARGA/epoch-99.pt
+│   ├── top_mixed50/MARGA/epoch-99.pt
+│   └── top_mixed100/MARGA/epoch-99.pt
+└── Specific-training/
+    ├── const_20/MARGA/    const_50/MARGA/    const_100/MARGA/
+    ├── dist_20/MARGA/     dist_50/MARGA/     dist_100/MARGA/
+    └── unif_20/MARGA/     unif_50/MARGA/     unif_100/MARGA/
+```
+
 Mixed-training Model :
 
 ```bash

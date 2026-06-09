@@ -85,7 +85,7 @@ class MARGACanvasView @JvmOverloads constructor(
 
     // ── State ─────────────────────────────────────────────────────────────────
 
-    private var dataset: DatasetType.Synthetic? = null
+    private var dataset: DatasetType? = null
     private var result: MARGASolver.SolverResult? = null
     /** nodeIdx (1-based) → agentIdx that visited it */
     private val nodeVisitedBy = mutableMapOf<Int, Int>()
@@ -117,7 +117,7 @@ class MARGACanvasView @JvmOverloads constructor(
     // ── Public API ────────────────────────────────────────────────────────────
 
     /** Update dataset and/or result, redraw immediately (no animation). */
-    fun setData(dataset: DatasetType.Synthetic?, result: MARGASolver.SolverResult? = null) {
+    fun setData(dataset: DatasetType?, result: MARGASolver.SolverResult? = null) {
         this.dataset = dataset
         this.result  = result
         nodeVisitedBy.clear()
@@ -181,7 +181,7 @@ class MARGACanvasView @JvmOverloads constructor(
 
     // ── Helpers ───────────────────────────────────────────────────────────────
 
-    private fun coordsFor(data: DatasetType.Synthetic, nodeIdx: Int): Pair<Float, Float> {
+    private fun coordsFor(data: DatasetType, nodeIdx: Int): Pair<Float, Float> {
         val coords = when {
             nodeIdx == 0                  -> data.depot
             nodeIdx == data.loc.size + 1  -> data.depot

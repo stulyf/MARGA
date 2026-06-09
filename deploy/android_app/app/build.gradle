@@ -57,6 +57,4 @@ dependencies {
     // JSON parsing for config
     implementation 'com.google.code.gson:gson:2.10.1'
 
-    // OSMDroid for map visualization
-    implementation 'org.osmdroid:osmdroid-android:6.1.18'
 }

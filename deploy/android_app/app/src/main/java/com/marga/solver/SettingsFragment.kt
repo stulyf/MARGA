@@ -38,15 +38,6 @@ class SettingsFragment : Fragment() {
         binding.btnLoadSynthDist.setOnClickListener {
             loadDataset("synthetic_dist_n100_mini.json", "Synthetic Dist")
         }
-        binding.btnLoadShanghai.setOnClickListener {
-            loadDataset("realworld_sh_n100_mini.json", "Shanghai")
-        }
-        binding.btnLoadHangzhou.setOnClickListener {
-            loadDataset("realworld_hz_n100_mini.json", "Hangzhou")
-        }
-        binding.btnLoadChongqing.setOnClickListener {
-            loadDataset("realworld_cq_n100_mini.json", "Chongqing")
-        }
 
         // ── Benchmark ───────────────────────────────────────────────────────
         binding.btnRunBenchmark.setOnClickListener {
