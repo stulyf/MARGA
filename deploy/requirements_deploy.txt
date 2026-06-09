@@ -1,0 +1,8 @@
+# Requirements for ONNX export only.
+# Install in addition to the base requirements.txt:
+#
+#   pip install -r requirements.txt
+#   pip install -r deploy/requirements_deploy.txt
+
+onnx>=1.14.0
+onnxruntime>=1.17.0

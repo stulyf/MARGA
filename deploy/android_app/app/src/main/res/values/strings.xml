@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MARGA Planner</string>
+    <string name="title_plan">Plan</string>
+    <string name="title_results">Results</string>
+    <string name="title_settings">Settings</string>
+</resources>

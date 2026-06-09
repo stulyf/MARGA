@@ -1,0 +1,8 @@
+{
+  "n_nodes": 100,
+  "num_agents": 5,
+  "embed_dim": 128,
+  "n_heads": 8,
+  "tanh_clip": 10.0,
+  "n2": 102
+}

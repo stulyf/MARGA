@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary">#6750A4</color>
+    <color name="primary_container">#EADDFF</color>
+    <color name="on_primary_container">#21005D</color>
+    <color name="secondary">#625B71</color>
+    <color name="tertiary">#7D5260</color>
+    <color name="accent">#009688</color>
+
+    <!-- Agent Colors -->
+    <color name="agent_0">#F44336</color>
+    <color name="agent_1">#2196F3</color>
+    <color name="agent_2">#4CAF50</color>
+    <color name="agent_3">#FF9800</color>
+    <color name="agent_4">#9C27B0</color>
+
+    <color name="node_unvisited">#90CAF9</color>
+    <color name="node_visited">#A5D6A7</color>
+    <color name="depot_gold">#FFD700</color>
+    <color name="grid_gray">#E0E0E0</color>
+</resources>

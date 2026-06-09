@@ -8,3 +8,9 @@ results/
 pretrained/
 trained_model/
 vdrpmdpc.py
+
+# Android build artifacts
+deploy/android_app/**/build/
+deploy/android_app/**/.gradle/
+deploy/android_app/**/.idea/
+deploy/android_app/local.properties

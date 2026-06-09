@@ -48,7 +48,6 @@ Checkpoints and logs are saved to `outputs/<problem>_<distribution><size>/<run_n
 
 ## 4. Evaluate with Pretrained Weights
 
-
 Mixed-training Model :
 
 ```bash
@@ -84,6 +83,50 @@ python run.py -h
 python eval.py -h
 python visualize.py -h
 ```
+
+## 6. Deploy to Android (ONNX Runtime)
+
+This section covers on-device inference via ONNX Runtime on Android.
+The model is split into two sub-networks for efficient autoregressive decoding:
+- `encoder.onnx` — runs once per problem instance
+- `decoder_step.onnx` — runs once per decoding step (~30–80 times)
+
+### Step 1: Install export dependencies
+
+```bash
+pip install -r deploy/requirements_deploy.txt
+```
+
+### Step 2: Export ONNX models
+
+```bash
+python deploy/export_onnx.py \
+  --ckpt pretrained/Mixed-training/top_mixed100/MARGA/epoch-99.pt \
+  --n_nodes 100 --num_agents 5 \
+  --output deploy/android_app/app/src/main/assets/
+```
+
+This generates three files in `assets/`:
+- `encoder.onnx` (~3 MB)
+- `decoder_step.onnx` (~0.3 MB)
+- `config.json`
+
+> **Note:** Pre-exported model files for n=100, K=5 are already included in
+> `deploy/android_app/app/src/main/assets/` for convenience.
+
+### Step 3: Build and run the Android app
+
+1. Open `deploy/android_app/` in **Android Studio**
+2. Connect an Android device (API 26+) or start an emulator
+3. Click **Run** — the app loads the ONNX models and solves TOP instances interactively
+
+The Android app (`MARGASolver.kt`) implements the full inference pipeline:
+- Encoder precomputation
+- Entropy-scheduled autoregressive decoding
+- Greedy / stochastic node selection
+- Route feasibility mask updates
+
+
 
 ## Acknowledgements
 * AM ： 

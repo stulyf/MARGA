@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Material3 BottomNavigationView with labels = 80dp -->
+    <dimen name="bottom_nav_height">80dp</dimen>
+</resources>

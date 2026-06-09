@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingVertical="6dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <!-- Agent color dot -->
+        <View
+            android:id="@+id/viewColor"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:background="@drawable/circle_shape" />
+
+        <TextView
+            android:id="@+id/tvAgentName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="10dp"
+            android:text="Agent 0"
+            android:textAppearance="?attr/textAppearanceBodyMedium" />
+
+        <TextView
+            android:id="@+id/tvNodesCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0 nodes"
+            android:textAppearance="?attr/textAppearanceLabelMedium"
+            android:alpha="0.7" />
+
+        <TextView
+            android:id="@+id/tvPrize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="(0)"
+            android:textAppearance="?attr/textAppearanceLabelSmall"
+            android:textStyle="bold"
+            android:alpha="0.85" />
+    </LinearLayout>
+
+    <!-- Prize progress bar -->
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/progressPrize"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginStart="22dp"
+        android:progress="0"
+        android:max="100"
+        app:trackCornerRadius="4dp"
+        app:trackThickness="6dp" />
+
+</LinearLayout>

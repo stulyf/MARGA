@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="56dp">
+
+        <!-- ── Toolbar ──────────────────────────────────────────────────── -->
+        <LinearLayout
+            android:id="@+id/toolbar_controls"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="6dp"
+            android:background="?attr/colorSurface"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <!-- Node count badge -->
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipNodeCount"
+                style="@style/Widget.Material3.Chip.Assist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0 nodes"
+                android:checkable="false"
+                android:clickable="false" />
+
+            <View android:layout_width="0dp" android:layout_height="1dp" android:layout_weight="1"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnRandom"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Random" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnClear"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Clear" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnRun"
+                style="@style/Widget.Material3.Button.TonalButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Run" />
+        </LinearLayout>
+
+        <!-- ── Progress bar ─────────────────────────────────────────────── -->
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:id="@+id/solveProgress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/toolbar_controls" />
+
+        <!-- ── Visualization area ────────────────────────────────────────── -->
+        <FrameLayout
+            android:id="@+id/vizContainer"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/toolbar_controls"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <com.marga.solver.MARGACanvasView
+                android:id="@+id/canvasView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <org.osmdroid.views.MapView
+                android:id="@+id/mapView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone" />
+        </FrameLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- ── Results bottom sheet ───────────────────────────────────────────── -->
+    <include
+        android:id="@+id/bottomSheetResults"
+        layout="@layout/layout_results_bottom_sheet" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
