@@ -1,5 +1,6 @@
 # MARGA: Multi-agent Relative Geometric-aware Attention with Entropy-sequential Decision for Team Orienteering Problem
 
+**Accepted by IEEE Transactions on Automation Science and Engineering (T-ASE), 2026.**
 
 ## 1. Environment Setup
 
